@@ -90,6 +90,21 @@ function checkNumber() {
   document.querySelector('[name="num"]').value = ''
 }
 
+// function to check if valid numeral submitted and display results
+
+function checkNumeral() {
+  let numeralToConvert = document.querySelector('[name="numeral"]').value
+  if (!convertToNumber(numeralToConvert)) {
+    convertResponse.innerHTML = 'Please enter valid Roman Numeral'
+    convertResponse.style.visibility = 'visible'
+  } else {
+    const converted = convertToNumber(numeralToConvert)
+    convertResponse.innerHTML = `${converted}`
+    convertResponse.style.visibility = 'visible'
+  }
+  document.querySelector('[name="numeral"]').value = ''
+}
+
 // function to convert number to roman numeral
 function convertToRoman(num) {
   // key of roman numerals
@@ -104,4 +119,20 @@ function convertToRoman(num) {
         }
     }
     return roman
+}
+
+function convertToNumber(roman) {
+  const string = roman.toUpperCase()
+  const validator = /^M*(?:D?C{0,3}|C[MD])(?:L?X{0,3}|X[CL])(?:V?I{0,3}|I[XV])$/
+  const token = /[MDLV]|C[MD]?|X[CL]?|I[XV]?/g
+  const romanKey = {M:1000,CM:900,D:500,CD:400,C:100,XC:90,L:50,XL:40,X:10,IX:9,V:5,IV:4,I:1}
+  let number = 0
+  let m
+  if (!(string && validator.test(string))) {
+    return false
+  }
+  while (m = token.exec(string)) {
+    number += romanKey[m[0]]
+  }
+  return number
 }
