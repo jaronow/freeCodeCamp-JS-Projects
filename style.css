@@ -36,3 +36,8 @@ button[name="check-palindrom"] {
   display: block;
   margin: 0 auto;
 }
+
+#palindrom-response {
+  visibility: hidden;
+  padding-bottom: 2rem;
+}
