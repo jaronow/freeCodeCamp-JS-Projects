@@ -27,10 +27,6 @@ main {
   padding-top: 2rem;
 }
 
-.word-input {
-
-}
-
 button[name="check-palindrom"] {
   width: 40%;
   display: block;
@@ -40,4 +36,20 @@ button[name="check-palindrom"] {
 #palindrom-response {
   visibility: hidden;
   padding-bottom: 2rem;
+}
+
+#roman-num-convert {
+  width: 50%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid white;
+}
+button[name="convert-num"],
+button[name="convert-numeral"] {
+  width: 40%;
+  display: block;
+  margin: 0 auto;
 }
