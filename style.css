@@ -1,0 +1,38 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: blue;
+  color: white;
+}
+
+main {
+  display: grid;
+}
+
+#palindrom-checker {
+  width: 50%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid white;
+}
+
+#palindrom-checker h2 {
+  padding-top: 2rem;
+}
+
+.word-input {
+
+}
+
+button[name="check-palindrom"] {
+  width: 40%;
+  display: block;
+  margin: 0 auto;
+}
