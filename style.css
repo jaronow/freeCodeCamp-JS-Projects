@@ -53,3 +53,8 @@ button[name="convert-numeral"] {
   display: block;
   margin: 0 auto;
 }
+
+#convert-response {
+  visibility: hidden;
+  padding-bottom: 2rem;
+}
