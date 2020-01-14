@@ -47,6 +47,11 @@ button[name="check-palindrom"] {
   justify-content: space-between;
   border: 2px solid white;
 }
+
+#roman-num-convert h2 {
+  padding-top: 2rem;
+}
+
 button[name="convert-num"],
 button[name="convert-numeral"] {
   width: 40%;
@@ -55,6 +60,31 @@ button[name="convert-numeral"] {
 }
 
 #convert-response {
+  visibility: hidden;
+  padding-bottom: 2rem;
+}
+
+#caesars-cipher {
+  width: 50%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid white;
+}
+
+#caesars-cipher h2 {
+  padding-top: 2rem;
+}
+
+button[name="cipher-submit"] {
+  width: 40%;
+  display: block;
+  margin: 0 auto;
+}
+
+#cipher-response {
   visibility: hidden;
   padding-bottom: 2rem;
 }
