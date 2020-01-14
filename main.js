@@ -178,3 +178,45 @@ function rot13(str) {
   }
   return message.join('')
 }
+
+// Telephone Number Validator elements
+
+const phoneInputField = document.querySelector('[name="phone"]')
+const phoneBtn = document.querySelector('[name="phone-submit"]')
+let phoneResonse = document.getElementById('phone-response')
+
+// Telephone Number Validator event listener for click and enter button
+
+phoneInputField.addEventListener('keydown', event => {
+  if (event.keyCode === 13) {
+    validatePhone()
+  }
+  return
+})
+
+phoneBtn.addEventListener('click', validatePhone)
+
+// function to submit ph# to validate and display response
+
+function validatePhone() {
+  let phoneNum = document.querySelector('[name="phone"]').value
+  if (telephoneCheck(phoneNum)) {
+    phoneResonse.innerHTML = `${phoneNum} is VALID`
+    phoneResonse.style.color = 'white'
+    phoneResonse.style.visibility = 'visible'
+  } else {
+    phoneResonse.innerHTML = `${phoneNum} is INVALID!!!`
+    phoneResonse.style.color = 'red'
+    phoneResonse.style.visibility = 'visible'
+  }
+  document.querySelector('[name="phone"]').value = ''
+}
+
+// function that validates format of submitted phone number
+
+function telephoneCheck(str) {
+  // regex to check ph# for correct formatting
+  const regEx = /^(1[\s-]?)?(\([1-9]\d\d\)|[1-9]\d\d)[\s-]?[1-9]\d\d[\s-]?\d{4}$/g
+  // test ph# format and return true or false
+  return regEx.test(str)
+}
