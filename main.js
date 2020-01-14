@@ -176,5 +176,5 @@ function rot13(str) {
       message.push(String.fromCharCode(char - 13))
     }
   }
-  return message.join('');
+  return message.join('')
 }

@@ -6,4 +6,6 @@ Part 1 - Palindrome Checker: Will check any word or words to see if they are a P
 
 Part 2 - Roman Numeral Converter: Will convert any valid number to Roman Numeral or any valid Roman Numeral to a number
 
-Part 3 - Caesars Cipher: takes in a ROT13 encoded string and returns the decoded value
+Part 3 - Caesars Cipher: takes in a string and returns ROT13 encoded message or decodes message
+
+Part 4 - Telephone Number Validator: Checks if submitted ph# is in a valid US format with or without country code
