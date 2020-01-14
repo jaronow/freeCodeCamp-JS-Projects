@@ -8,9 +8,8 @@ submitPalindromeBtn.addEventListener('click', checkWord)
 palindromInputField.addEventListener('keydown', event => {
   if (event.keyCode === 13) {
     checkWord()
-  } else {
-    return
   }
+  return
 })
 
 // function the checks the input word or words
@@ -60,9 +59,8 @@ numberConvertBtn.addEventListener('click', checkNumber)
 numberConvertInputField.addEventListener('keydown', event => {
   if (event.keyCode === 13) {
     checkNumber()
-  } else {
-    return
   }
+  return
 })
 
 // convert Roman Numeral to number event listener for click and pressing enter
@@ -71,9 +69,8 @@ numeralConvertBtn.addEventListener('click', checkNumeral)
 numeralConvertInputField.addEventListener('keydown', event => {
   if (event.keyCode === 13) {
     checkNumeral()
-  } else {
-    return
   }
+  return
 })
 
 // function to check if valid number submitted and display results
@@ -135,4 +132,49 @@ function convertToNumber(roman) {
     number += romanKey[m[0]]
   }
   return number
+}
+
+// Caesars Cipher Elements
+
+const cipherInputField = document.querySelector('[name="cipher"]')
+const cipherBtn = document.querySelector('[name="cipher-submit"]')
+let cipherResponse = document.getElementById('cipher-response')
+
+// Caesars Cipher event listener for click and enter button
+
+cipherInputField.addEventListener('keydown', event => {
+  if (event.keyCode === 13) {
+    startCipher()
+  }
+  return
+})
+
+cipherBtn.addEventListener('click', startCipher)
+
+// function to grab the cipher to encode/decode and make sure its in uppercase
+
+function startCipher() {
+  let cipherCode = document.querySelector('[name="cipher"]').value
+  cipherCode = cipherCode.toUpperCase()
+  let message = rot13(cipherCode)
+  cipherResponse.innerHTML = `${message}`
+  cipherResponse.style.visibility = 'visible'
+  document.querySelector('[name="cipher"]').value = ''
+}
+
+// function to decode cipher and return it
+
+function rot13(str) {
+  let message = []
+  for (let i = 0; i < str.length; i++) {
+    let char = str.charCodeAt(i)
+    if (char < 65 || char > 90) {
+      message.push(str[i])
+    } else if (char < 78) {
+      message.push(String.fromCharCode(char + 13))
+    } else {
+      message.push(String.fromCharCode(char - 13))
+    }
+  }
+  return message.join('');
 }
